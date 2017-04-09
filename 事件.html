@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="loadBody()">
+焦点事件
+<input type="text" onfocus="f()" onblur="b()" id="input1" placeholder="输入框1">
+<br>
+<br>
+<input type="text" placeholder="输入框2">
+<div id="message"></div>
+<script>
+    function f() {
+        document.getElementById("message").innerHTML="输入框1获得了焦点";
+
+    }
+    function b() {
+        document.getElementById("message").innerHTML="输入框1丢失了焦点";
+    }
+</script>
+鼠标事件
+<br>
+<input type="button" onmousedown="down()" onmouseup="up()" value="用于演示按下和弹起">
+<input type="button" onmousemove="move()" value="用于演示鼠标经过">
+<input type="button" onmouseover="over()" value="用于演示鼠标进入">
+<input type="button" onmouseleave="out()" value="用于演示鼠标退出">
+
+<br>
+<br>
+
+<script>
+    var number=0;
+    function down() {
+        document.getElementById("message01").innerHTML="按下了鼠标";
+    }
+    function up() {
+        document.getElementById("message01").innerHTML="弹起了鼠标";
+    }
+    function move() {
+        document.getElementById("message01").innerHTML="鼠标进入次数"+(++number)+"次";
+    }
+    function over() {
+        document.getElementById("message01").innerHTML="鼠标经过次数"+(++number)+"次";
+    }
+    function out() {
+        document.getElementById("message01").innerHTML="鼠标退出";
+        number=0;
+    }
+</script>
+<div id="message01"></div>
+<br>
+<input type="button" onclick="singleClick()" ondblclick="doubleClick()" value="用于单击和双击">
+<br>
+<br>
+<div id="message03"></div>
+<script>
+    function singleClick() {
+        document.getElementById("message03").innerHTML="单击按钮";
+    }
+    function doubleClick() {
+        document.getElementById("message03").innerHTML="双击按钮";
+    }
+</script>
+<br>
+
+<!--变化事件-->
+<br>
+<input type="text" id="t1" onchange="change()" value="">
+<br>
+<input type="button" value="令输入框失去焦点的按钮">
+<br>
+<br>
+<div id="message04"></div>
+<script>
+    function change() {
+        var message=document.getElementById("message04");
+        var t1=document.getElementById("t1");
+        message.innerHTML="输入框的值变为了"+t1.value;
+    }
+</script>
+<!--加载事件-->
+<script>
+    function loadBody() {
+        document.getElementById("messageOfLoadFile").innerHTML="文档加载成功"
+    }
+    function loadImg() {
+        document.getElementById("messageOfLoadImg").innerHTML="图片加载成功"
+    }
+</script>
+<div id="messageOfLoadFile"></div>
+<div id="messageOfLoadImg"></div>
+<img onload="loadImg()" src="http://how2j.cn/example.gif"/>
+<br>
+
+<input type="button" onclick="singleClick(this)" value="aaaa">
+<input type="button" onclick="singleClick(this)" value="bbbb">
+<div id="message06"></div>
+<script>
+    function singleClick(button){
+        var s="被点击的文本是"+button.value;
+        document.getElementById("message06").innerHTML=s;
+    }
+</script>
+
+
+</body >
+</html>
