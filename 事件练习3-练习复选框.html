@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        function change() {
+            var che=document.getElementsByClassName("game");
+            if(che[0].checked==true){
+                for(i=0;i<che.length;i++){
+                    che[i].checked=true;
+                    }
+                }else{
+                    for(i=0;i<che.length;i++){
+                        che[i].checked=false;
+                    }
+
+            }
+
+        }
+        function fanxuan() {
+            var che=document.getElementsByClassName("game");
+            for(i=1;i<che.length;i++){
+                che[i].checked=!che[i].checked;
+            }
+
+        }
+    </script>
+</head>
+<style>
+    p.but{cursor: pointer}
+</style>
+<body>
+<p><input type="checkbox" class="game" onchange="change()" >全选</p>
+<p><input type="checkbox" class="game" >剑网三</p>
+<p><input type="checkbox" class="game" >天涯明月刀</p>
+<p><input type="checkbox" class="game" >古剑奇谭</p>
+<p><input type="checkbox" class="game" >倩女幽魂</p>
+<p class="but" onclick="fanxuan()">反选</p>
+
+</body>
+</html>

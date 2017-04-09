@@ -5,7 +5,7 @@
     <title>Title</title>
 </head>
 <body onload="loadBody()">
-焦点事件
+<h2>焦点事件</h2>
 <input type="text" onfocus="f()" onblur="b()" id="input1" placeholder="输入框1">
 <br>
 <br>
@@ -49,6 +49,54 @@
         number=0;
     }
 </script>
+<h2>键盘事件</h2>
+<p>记得要先用鼠标选中该组件，然后敲击键盘</p>
+<br>
+<input type="button" onkeydown="down(event)" value="用于演示按下keydown">
+<br>
+<br>
+
+<input type="button" onkeypress="press(event)" value="用于演示按下keypress">
+<br>
+<br>
+
+<input type="button" onkeyup="up()" value="用于演示弹起">
+<br>
+<br>
+
+<div id="message07"></div>
+<script>
+    var number=0;
+    //按下键盘的函数
+    function down(e) {
+        var text="按下了键"+e.keyCode;
+        if(e.shiftKey==1){
+            text+="并且按下了shift键";
+
+        }
+        document.getElementById("message07").innerHTML=text;
+    }
+
+    function up() {
+        document.getElementById("message07").innerHTML="弹起了键盘";
+    }
+    function press(e) {
+        var text="按下了键"+e.keyCode;
+        if(e.shiftKey==1){
+            text+="并且按下shift键";
+        }
+        document.getElementById("message07").innerHTML=text;
+
+    }
+</script>
+
+
+
+
+
+
+
+<h2>点击事件</h2>
 <div id="message01"></div>
 <br>
 <input type="button" onclick="singleClick()" ondblclick="doubleClick()" value="用于单击和双击">
@@ -65,7 +113,7 @@
 </script>
 <br>
 
-<!--变化事件-->
+<h2>变化事件</h2>
 <br>
 <input type="text" id="t1" onchange="change()" value="">
 <br>
@@ -80,7 +128,7 @@
         message.innerHTML="输入框的值变为了"+t1.value;
     }
 </script>
-<!--加载事件-->
+<h2>加载事件</h2>
 <script>
     function loadBody() {
         document.getElementById("messageOfLoadFile").innerHTML="文档加载成功"
@@ -89,11 +137,13 @@
         document.getElementById("messageOfLoadImg").innerHTML="图片加载成功"
     }
 </script>
+
+
 <div id="messageOfLoadFile"></div>
 <div id="messageOfLoadImg"></div>
 <img onload="loadImg()" src="http://how2j.cn/example.gif"/>
 <br>
-
+<h2>当前组件</h2>
 <input type="button" onclick="singleClick(this)" value="aaaa">
 <input type="button" onclick="singleClick(this)" value="bbbb">
 <div id="message06"></div>

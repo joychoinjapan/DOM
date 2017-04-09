@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>pull down</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function showmenu(type) {
+            var menuDivs=document.getElementsByClassName("menu");
+            for(i=0;i<menuDivs.length;i++){
+                var d=menuDivs[i];
+                d.style.display="none";
+            }
+            var divClassName=type;
+            var div=document.getElementsByClassName(divClassName)[0];
+            div.style.display="block"
+
+        }
+
+    </script>
+</head>
+<style>
+    a{
+        color:cornflowerblue;
+        text-decoration: none;
+    }
+    div{
+        border: 1px solid lightgrey;
+        width: 100px;
+        margin-top: 15px;
+        top:20px;
+
+    }
+    div.menu{
+        display:none;
+    }
+    .hero{
+        position: absolute;
+        left: 80px;
+    }
+    .cloth{
+        position: absolute;
+        left: 45px;
+    }
+    .weapon{
+        position: absolute;
+        left: 5px;
+    }
+    div a{
+        text-align: center;
+        display: block;
+        font-size: 14px;
+        font-family: 宋体;
+        color:#888888;
+        padding: 10px 20px 10px 20px;
+
+    }
+    div a:hover{
+        background-color: lightgrey;
+
+    }
+</style>
+<body>
+<a href="nowhere" onmouseover="showmenu('weapon')">武器</a>
+<a href="nowhere" onmouseover="showmenu('cloth')">护甲</a>
+<a href="nowhere" onmouseover="showmenu('hero')">英雄</a>
+<br>
+<div class=" menu weapon" >
+    <a href="no">大剑</a>
+    <a href="no">屠龙</a>
+    <a href="no">倚天</a>
+    <a href="no">七孔砖</a>
+</div>
+<div class=" menu cloth">
+    <a href="no">胸甲</a>
+    <a href="no">护腕</a>
+    <a href="no">头盔</a>
+    <a href="no">鞋子</a>
+
+</div>
+<div class=" menu hero">
+    <a href="no">盖伦</a>
+    <a href="no">提莫</a>
+    <a href="no">安妮</a>
+    <a href="no">死哥</a>
+</div>
+
+</body>
+</html>
+
+</body>
+</html>
