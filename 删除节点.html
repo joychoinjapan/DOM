@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+    function removeDiv() {
+        var parentDiv=document.getElementById("parentDiv");
+        var div2=document.getElementById("div2");
+        parentDiv.removeChild(div2);
+    }
+    function removeHref() {
+        var link=document.getElementById("link");
+        link.removeAttribute("href");
+    }
+    function removeDiv1() {
+        var parentDiv=document.getElementById("parentDiv");
+        var textNode=parentDiv.childNodes[0];
+        parentDiv.removeChild(textNode);
+    }
+    function removeDiv2() {
+        var parentDiv=document.getElementById("parentDiv");
+        parentDiv.innerHTML="";
+    }
+    function recover() {
+        var parentDiv=document.getElementById("parentDiv");
+        parentDiv.innerHTML="Im a text";
+    }
+</script>
+<body>
+<div id="parentDiv"><div id="div1">安全的div</div>
+    <div id="div2">即将被删除的div</div>
+    <a id="link" href="http://www.google.co.jp">http://www.google.co.jp</a>
+
+</div>
+<button onclick="removeDiv()">删除第二个div</button>
+<button onclick="removeHref()">删除超链接的href属性</button>
+<button onclick="removeDiv1()">delete text01</button>
+<button onclick="removeDiv2()">delete text02</button>
+<button onclick="recover()">recover</button>
+
+</body>
+</html>

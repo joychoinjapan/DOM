@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+    var node=null;
+    function showParent() {
+        if(null==node)
+            node=document.getElementById("d1");
+        if(document==node)
+            alert("已是跟节点:document");
+        else {
+            alert(node.parentNode);
+            node=node.parentNode;
+        }
+    }
+</script>
+<script>
+    function showPre() {
+        var d2=document.getElementById("d2");
+        alert(d2.previousSibling.innerHTML);
+    }
+    function showNext() {
+        var d2=document.getElementById("d2");
+        alert(d2.nextSibling.innerHTML);
+    }
+</script>
+<body>
+
+<div id="parentDiv">parent content
+    <div id="d1">A</div><div id="d2">B</div><div id="d3">C</div>
+</div>
+
+<button onclick="showParent()">不断递归d1的父节点</button>
+<button onclick="showPre()">获取d2的前一个同胞</button>
+<button onclick="showNext()">获取d2的后一个同胞</button>
+</body>
+</html>

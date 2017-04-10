@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function add() {
+            var hr=document.createElement("hr");
+            var div1=document.getElementById("d");
+            div1.appendChild(hr);
+        }
+        function addtext() {
+            var p=document.createElement("p");
+            var text=document.createTextNode("这是通过DOM创建出来的<p>");
+            p.appendChild(text);
+
+            var div1=document.getElementById("d");
+            div1.appendChild(p);
+        }
+        function addlink() {
+            var a=document.createElement("a");
+            var content=document.createTextNode("http://12306.com");
+            a.appendChild(content);
+
+            var href=document.createAttribute("href");
+            href.nodeValue="http://12306.com";
+            a.setAttributeNode(href);
+
+            var div1=document.getElementById("d");
+            div1.appendChild(a);
+        }
+    </script>
+</head>
+<body>
+<div id="d">Hello HTML DOM</div>
+<button onclick="add()">在div中追加一个hr元素</button>
+<button onclick="addtext()">在div中追加一个p元素</button>
+<button onclick="addlink()">在div中追加一个超链</button>
+</body>
+</html>

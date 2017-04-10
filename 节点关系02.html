@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function showfirst() {
+            var div=document.getElementById("parentDiv");
+            alert(div.firstChild.nodeName);
+        }
+        function showlast() {
+            var div=document.getElementById("parentDiv");
+            alert(div.lastChild.nodeName);
+        }
+        function showall() {
+            var div=document.getElementById("parentDiv");
+            alert("总子节点个数"+div.childNodes.length+" 去除文本的子节点个数"+div.children.length);
+        }
+    </script>
+</head>
+<body>
+<div id="parentDiv">
+    父Div的内容
+    <div id="d1">第一个div</div>
+    <div id="d2">第二个div</div>
+    <div id="d3">第三个div</div></div>
+
+<button onclick="showfirst()">第一个子节点</button>
+<button onclick="showlast()">最后一个子节点</button>
+<button onclick="showall()">所有子节点数量</button>
+</body>
+</html>

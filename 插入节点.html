@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function appendDiv() {
+            var parentDiv=document.getElementById("parentDiv");
+            var div4=document.createElement("div")
+            var text=document.createTextNode("第四个div");
+            div4.appendChild(text);
+            parentDiv.appendChild(div4);
+        }
+    </script>
+    <script>
+        function insertDiv() {
+            var d25=document.createElement("div");
+            var text=document.createTextNode("2.5th div");
+            d25.appendChild(text);
+
+            var parentDiv=document.getElementById("parentDiv");
+            var d3=document.getElementById("d3");
+            parentDiv.insertBefore(d25,d3);
+
+        }
+    </script>
+</head>
+<body>
+<div id="parentDiv">
+    <div id="d1">第一个div</div>
+    <div id="d2">第二个div</div>
+    <div id="d3">第三个div</div>
+</div>
+<button onclick="appendDiv()">追加第4个div</button>
+<button onclick="insertDiv()">在第二和第三之间，插入第2.5个div</button>
+</body>
+</html>

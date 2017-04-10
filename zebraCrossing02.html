@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<style>
+    table{
+        border-collapse:collapse;
+        width:90%;
+    }
+    tr.odd{
+        background-color:#f8f8f8;
+    }
+    tr{
+        border-bottom-style: solid;
+        border-bottom-width: 1px;
+        border-bottom-color: lightgray;
+        height:35px;
+    }
+
+    td{
+        width:25%;
+        text-align:center;
+    }
+
+</style>
+<body>
+<div id="zebraCrossing"></div>
+
+<script>
+    function addtext(text) {
+        var td=document.createElement("td");
+        var text=document.createTextNode(text);
+        td.appendChild(text);
+        return td;
+
+    }
+
+    function addtd(array) {
+        var tr=document.createElement("tr");
+        for(i=0;i<array.length;i++){
+            var td = addtext(array[i]);
+            tr.appendChild(td);
+        }
+        return tr;
+    }
+
+    function addtable(rows) {
+        var table=document.createElement("table");
+        for(j=0;j<rows.length;j++){
+            var tr=addtd(rows[j]);
+            table.appendChild(tr);
+        }
+        return table;
+    }
+
+    var div=document.getElementById("zebraCrossing");
+    var row00=new Array("id","名称","血量","伤害");
+    var row01=new Array("1","gareen","340","58");
+    var row02=new Array("2","teemo","320","76");
+    var row03=new Array("3","annie","380","38");
+    var row04=new Array("4","deadbrother","400","90");
+    var rows=new Array(row00,row01,row02,row03,row04);
+    var table=addtable(rows);
+    div.appendChild(table);
+
+</script>
+</body>
+</html>
