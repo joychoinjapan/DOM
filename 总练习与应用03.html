@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function check(str) {
+            var patterns =/^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
+
+                if(patterns.test(str))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+
+
+        }
+        function sub() {
+
+            var username=document.getElementById("username");
+            var value=username.value.toString();
+            var age=document.getElementById("age");
+            var email=document.getElementById("email");
+            if(parseInt(age.value)!=age.value){
+                alert("年龄必须是整数");
+                return false;
+            }
+            if(value.length==0){
+                alert("用户名不得为空");
+                return false;
+            }
+            if(value.length<3){
+                alert("用户名必须超过3位");
+                return false;
+            }
+            if(!check(email.value)){
+                alert("请输入正确的电子邮箱");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+账号:<input id="username" type="text">
+年龄:<input id="age" type="text">
+Email:<input id="email" type="text">
+<input type="submit" onclick="sub()" value="提交">
+</body>
+</html>

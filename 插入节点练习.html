@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*之前出错的原因是head数组没有指定下标*/
+        function addJS(){
+            var newScript = document.createElement('script');
+            newScript.src = 'test3041.js';
+            var head = document.getElementsByTagName("head")[0];
+            head.appendChild(newScript);
+        }
+    </script>
+</head>
+<body>
+<button onclick="addJS()">召唤</button>
+</body>
+</html>
